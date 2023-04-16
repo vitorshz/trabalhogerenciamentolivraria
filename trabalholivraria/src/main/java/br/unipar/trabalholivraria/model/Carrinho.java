@@ -1,22 +1,27 @@
 package br.unipar.trabalholivraria.model;
+
+import java.util.ArrayList;
+
 public class Carrinho {
+
     private int cod_carrinho;
-    private Livros livros;
+    private ArrayList<Livros> Livros = new ArrayList<>();
     private int qtdVenda;
     private double vlPrecoUnitario;
     private double vlTotal;
 
     public Carrinho() {
+        this.Livros = new ArrayList<>();
     }
 
-    public Carrinho(int cod_carrinho, Livros livros, int qtdVenda, double vlPrecoUnitario, double vlTotal) {
+    public Carrinho(int cod_carrinho, int qtdVenda, double vlPrecoUnitario, double vlTotal, ArrayList<Livros> Livros) {
         this.cod_carrinho = cod_carrinho;
-        this.livros = livros;
         this.qtdVenda = qtdVenda;
         this.vlPrecoUnitario = vlPrecoUnitario;
         this.vlTotal = vlTotal;
+        this.Livros = new ArrayList<>();
     }
-
+    
     public int getCod_carrinho() {
         return cod_carrinho;
     }
@@ -25,12 +30,12 @@ public class Carrinho {
         this.cod_carrinho = cod_carrinho;
     }
 
-    public Livros getLivros() {
-        return livros;
+    public ArrayList<Livros> getLivros() {
+        return Livros;
     }
 
-    public void setLivros(Livros livros) {
-        this.livros = livros;
+    public void setLivros(ArrayList<Livros> Livros) {
+        this.Livros = Livros;
     }
 
     public int getQtdVenda() {
@@ -39,6 +44,7 @@ public class Carrinho {
 
     public void setQtdVenda(int qtdVenda) {
         this.qtdVenda = qtdVenda;
+        this.vlTotal = this.vlPrecoUnitario *  this.qtdVenda;
     }
 
     public double getVlPrecoUnitario() {
@@ -47,6 +53,7 @@ public class Carrinho {
 
     public void setVlPrecoUnitario(double vlPrecoUnitario) {
         this.vlPrecoUnitario = vlPrecoUnitario;
+        this.vlTotal = this.vlPrecoUnitario *  this.qtdVenda;
     }
 
     public double getVlTotal() {
@@ -57,10 +64,4 @@ public class Carrinho {
         this.vlTotal = vlTotal;
     }
 
-    @Override
-    public String toString() {
-        return "Carrinho{" + "cod_carrinho=" + cod_carrinho + ", livros=" + livros + ", qtdVenda=" + qtdVenda + ", vlPrecoUnitario=" + vlPrecoUnitario + ", vlTotal=" + vlTotal + '}';
-    }
-    
-    
 }
