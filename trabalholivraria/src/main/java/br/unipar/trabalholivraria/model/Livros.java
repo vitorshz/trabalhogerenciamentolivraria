@@ -23,6 +23,9 @@ public class Livros {
     private ArrayList<Autores> autores;
 
     public Livros() {
+        this.Editoras = new ArrayList<>();
+        this.generos = new ArrayList<>();
+        this.autores = new ArrayList<>();
     }
 
     public Livros(int cod_livro, String tituloLivro, double vlPrecoLivro, int qtdEstoqueLivro, int qtdPgs, int anoLancamento, ArrayList<Editora> Editoras, ArrayList<Generos> generos, ArrayList<Autores> autores) {
