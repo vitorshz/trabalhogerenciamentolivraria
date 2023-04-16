@@ -1,13 +1,32 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package br.unipar.trabalholivraria.model;
-
-/**
- *
- * @author vinid
- */
 public class Fr_Pagamento {
+    private int cd_Formapagamento;
+    private String ds_FormaPagamento;
+    
+    public Fr_Pagamento(){
+        
+    }
+    public Fr_Pagamento(int cd_Formapagamento, String ds_Formapagamento){
+        this.cd_Formapagamento = cd_Formapagamento;
+       this.ds_FormaPagamento = ds_Formapagamento;
+    }
+    public int getcd_Formapagamento(){
+        return cd_Formapagamento;
+    }
+    public void setcd_Formapagamento(int cd_Formapagamento){
+        this.cd_Formapagamento = cd_Formapagamento;
+    }
+    public String getds_FormaPagamento(){
+        return ds_FormaPagamento;
+    }
+     public void setds_FormaPagamento(String ds_FormaPagamento){
+      this.ds_FormaPagamento = ds_FormaPagamento;
+    }
+
+    @Override
+    public String toString() {
+        return "Fr_Pagamento{" + "cd_Formapagamento=" + cd_Formapagamento + ", ds_FormaPagamento=" + ds_FormaPagamento + '}';
+    }
+    
     
 }
