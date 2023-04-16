@@ -1,13 +1,12 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package br.unipar.trabalholivraria.model;
-
-/**
- *
- * @author vinid
- */
+import java.util.ArrayList;
 public class Vendas {
+    private int cod_Venda;
+    private ArrayList<Clientes> clientes;
+    private ArrayList<Carrinho> Carrinho;
+    private ArrayList<Fr_Pagamento> Fr_Pagamento;
+    
+    
+    
     
 }
