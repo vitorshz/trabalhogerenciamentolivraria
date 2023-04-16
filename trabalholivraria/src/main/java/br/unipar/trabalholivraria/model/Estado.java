@@ -9,6 +9,7 @@ public class Estado {
     private ArrayList<Pais> paises;
     
     public Estado(){
+        this.paises = new ArrayList<>();
     }
     
     public Estado(int codEstado, String nomeEstado, String siglaUF, ArrayList<Pais> paises){

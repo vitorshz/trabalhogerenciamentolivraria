@@ -9,6 +9,7 @@ public class Endereco {
     private ArrayList<Cidade> cidades;
 
     public Endereco() {
+        this.cidades = new ArrayList<>();
     }
 
     public Endereco(String nmRua, String dsComplemento, int nrCasa, ArrayList<Cidade> cidades) {

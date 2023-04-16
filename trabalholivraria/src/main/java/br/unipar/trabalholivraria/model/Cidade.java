@@ -8,6 +8,7 @@ public class Cidade {
     private ArrayList<Estado> estados;
     
     public Cidade(){
+        this.estados = new ArrayList<>();
     }
     
     public Cidade(int codCidade, String nomeCidade, ArrayList<Estado> estados){

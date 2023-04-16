@@ -8,6 +8,7 @@ public class Clientes {
     private ArrayList<Endereco> enderecos;
     
     public Clientes(){
+        this.enderecos = new ArrayList<>();
     }
     
     public Clientes(String clienteCpf, String clienteNome, ArrayList<Endereco> enderecos){

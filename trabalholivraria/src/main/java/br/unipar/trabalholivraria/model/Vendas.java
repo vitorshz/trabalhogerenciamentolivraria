@@ -8,6 +8,9 @@ public class Vendas {
     private ArrayList<Fr_Pagamento> Fr_Pagamento;
 
     public Vendas() {
+        this.clientes = new ArrayList<>();
+        this.Carrinho = new ArrayList<>();
+        this.Fr_Pagamento = new ArrayList<>();
     }
 
     public Vendas(int cod_Venda, ArrayList<Clientes> clientes, ArrayList<Carrinho> Carrinho, ArrayList<Fr_Pagamento> Fr_Pagamento) {

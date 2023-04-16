@@ -7,7 +7,6 @@ import br.unipar.trabalholivraria.model.Clientes;
 import br.unipar.trabalholivraria.model.Editora;
 import br.unipar.trabalholivraria.model.Endereco;
 import br.unipar.trabalholivraria.model.Estado;
-import br.unipar.trabalholivraria.model.Estoque;
 import br.unipar.trabalholivraria.model.Fr_Pagamento;
 import br.unipar.trabalholivraria.model.Generos;
 import br.unipar.trabalholivraria.model.Livraria;
@@ -71,6 +70,7 @@ public class Trabalholivraria {
         
         Fr_Pagamento pix = new Fr_Pagamento(1, "PIX");
         Fr_Pagamento cartao_debito = new Fr_Pagamento(2, "CARTAO_DEBITO");
+        
         
     }
 }
