@@ -1,6 +1,7 @@
 package br.unipar.trabalholivraria;
 
 import br.unipar.trabalholivraria.model.Autores;
+import br.unipar.trabalholivraria.model.Cadastro;
 import br.unipar.trabalholivraria.model.Carrinho;
 import br.unipar.trabalholivraria.model.Cidade;
 import br.unipar.trabalholivraria.model.Clientes;
@@ -15,6 +16,7 @@ import br.unipar.trabalholivraria.model.Pais;
 import br.unipar.trabalholivraria.model.Vendas;
 import br.unipar.trabalholivraria.model.Vendedor;
 import javax.swing.JOptionPane;
+
 public class Trabalholivraria {
 
     public static void main(String[] args) {
@@ -36,8 +38,7 @@ public class Trabalholivraria {
         l1.setQtdPgs(244);
         l1.setQtdEstoqueLivro(3);
         l1.setVlPrecoLivro(59.99);
-        
-        
+
         Livros l2 = new Livros();
 
         Editora editora2 = new Editora(1, "Bloomsbury ", "02.100.212/0001-29");
@@ -53,7 +54,7 @@ public class Trabalholivraria {
         l2.setQtdPgs(208);
         l2.setQtdEstoqueLivro(10);
         l2.setVlPrecoLivro(35.90);
-        
+
         Livros l3 = new Livros();
 
         Editora editora3 = new Editora(1, "Disney Press", "04.200.901/0003-18");
@@ -69,27 +70,27 @@ public class Trabalholivraria {
         l3.setQtdPgs(144);
         l3.setQtdEstoqueLivro(15);
         l3.setVlPrecoLivro(65.99);
-        
+
         Fr_Pagamento pix = new Fr_Pagamento(1, "PIX");
         Fr_Pagamento cartao_debito = new Fr_Pagamento(2, "CARTAO_DEBITO");
-        
-        JOptionPane.showMessageDialog(null,"Bem vindo a livraria Poucaporva");
-        
-        
-        
+
+        JOptionPane.showMessageDialog(null, "Bem vindo a livraria Poucaporva");
+
         input = JOptionPane.showInputDialog("Deseja Criar um cadastro ou atulizar um cliente? \n"
                 + "1 - Criar \n"
                 + "2 - Atualizar");
         n1 = Integer.parseInt(input);
-        
-        if(n1 == 1){
+
+        if (n1 == 1) {
             //criando um cliente
             Clientes c1 = new Clientes();
+            c1.setCod_cliente(1);
             input = JOptionPane.showInputDialog("Qual o nome do cliente ?");
-            c1.setClienteNome(input);  
+            c1.setClienteNome(input);
+
             input = JOptionPane.showInputDialog("Qual o CPF do cliente ?");
-            c1.setClienteCpf(input);   
-            
+            c1.setClienteCpf(input);
+
             //criando o endereco
             Endereco endereco1 = new Endereco();
             endereco1.setCod_Endereco(1);
@@ -100,26 +101,23 @@ public class Trabalholivraria {
             endereco1.setNrCasa(nrCasa);
             input = JOptionPane.showInputDialog("Algum complemento?");
             endereco1.setDsComplemento(input);
-             c1.getEnderecos().add(endereco1);
-            
-            
+            c1.getEnderecos().add(endereco1);
+
             //Criando a cidade
             Cidade cidade1 = new Cidade();
             cidade1.setCodCidade(1);
             input = JOptionPane.showInputDialog("Qual o nome da cidade?");
             cidade1.setNomeCidade(input);
             endereco1.getCidades().add(cidade1);
-            
-           
-            
+
             //criando o pais
-           Pais p1 = new Pais();
+            Pais p1 = new Pais();
             p1.setCodPais(1);
             input = JOptionPane.showInputDialog("Qual o Pais?");
             p1.setNomePais(input);
             input = JOptionPane.showInputDialog("Qual a silga do Pais?");
             p1.setSiglaPais(input);
-            
+
             //criando estado 
             Estado estado1 = new Estado();
             estado1.setCodEstado(1);
@@ -127,42 +125,94 @@ public class Trabalholivraria {
             estado1.setNomeEstado(input);
             input = JOptionPane.showInputDialog("Qual a silga do estado?");
             estado1.setSiglaUF(input);
-            estado1.getPaises().add(p1);   
-            
+            estado1.getPaises().add(p1);
+
             System.out.println(c1.toString());
-         }
-        else if (n1 == 2){
+        } else if (n1 == 2) {
             JOptionPane.showMessageDialog(null, "Atualizar cadastro do cliente");
-        }
-        else{
+        } else {
             JOptionPane.showMessageDialog(null, "Comandao invalido");
-        }        
-        
-        int n=0;
-        input = JOptionPane.showInputDialog("Deseja qual livro? "+"\n"+
-                "1 - Diario de um Banana Volume 1 " +"\n"+
-                "2 - Harry Potter e a Pedra Filosofal"+"\n"+
-                "3 - Piratas dos caribe volume 1");
+        }
+
+        int n = 0;
+        input = JOptionPane.showInputDialog("Deseja qual livro? " + "\n"
+                + "1 - Diario de um Banana Volume 1 " + "\n"
+                + "2 - Harry Potter e a Pedra Filosofal" + "\n"
+                + "3 - Piratas dos caribe volume 1");
         n = Integer.parseInt(input);
 
-        if(n==1){
-        input = JOptionPane.showInputDialog("Qual seu codigo de Cliente"); 
-        int cod_clientes = Integer.parseInt(input);
-        Vendas venda = new Vendas();
-        venda.getClientes().add(c1);
-        } else if(n==2){
+        if (n == 1) {
+            Vendas venda = new Vendas();
+            venda.setCod_Venda(l1.getCod_livro());
 
-        } else if(n==3){
+            Carrinho carrinho = new Carrinho();
+            carrinho.setCod_carrinho(1);
+            carrinho.setQtdVenda(1);
+            carrinho.setVlDescontdo(10);
+            carrinho.setLivros(l1);
+            carrinho.setVlPrecoUnitario(l1.getVlPrecoLivro());
+            venda.getCarrinho().add(carrinho);
 
-        }else{
-            JOptionPane.showMessageDialog(null,"");
+            input = JOptionPane.showInputDialog("Qual a forma de pagamento\n"
+                    + "1 - para PIX "
+                    + "\n 2 - PARA DÉBITO");
+
+            n = 0;
+            if (n == 1) {
+                venda.getFr_Pagamento().add(pix);
+                //baixa no estoque
+                l1.setQtdEstoqueLivro(l1.getQtdEstoqueLivro() - carrinho.getQtdVenda());
+                System.out.println(carrinho.toString());
+                System.out.println(l1.toString());
+                System.out.println(venda.toString());
+                System.out.println(livrariapoucaporva.toString());
+            } else if (n == 2) {
+                venda.getFr_Pagamento().add(cartao_debito);
+                //baixa no estoque
+                l1.setQtdEstoqueLivro(l1.getQtdEstoqueLivro() - carrinho.getQtdVenda());
+                System.out.println(carrinho.toString());
+                System.out.println(l1.toString());
+                System.out.println(venda.toString());
+            }
+
+        } else if (n == 2) {
+            Vendas venda = new Vendas();
+            venda.setCod_Venda(l2.getCod_livro());
+
+            Carrinho carrinho = new Carrinho();
+            carrinho.setCod_carrinho(1);
+            carrinho.setQtdVenda(1);
+            carrinho.setVlDescontdo(10);
+            carrinho.setLivros(l2);
+            carrinho.setVlPrecoUnitario(l2.getVlPrecoLivro());
+            venda.getCarrinho().add(carrinho);
+
+            //baixa no estoque
+            l2.setQtdEstoqueLivro(l2.getQtdEstoqueLivro() - carrinho.getQtdVenda());
+            System.out.println(carrinho.toString());
+            System.out.println(l2.toString());
+            System.out.println(venda.toString());
+        } else if (n == 3) {
+            Vendas venda = new Vendas();
+            venda.setCod_Venda(l3.getCod_livro());
+
+            Carrinho carrinho = new Carrinho();
+            carrinho.setCod_carrinho(1);
+            carrinho.setQtdVenda(1);
+            carrinho.setVlDescontdo(10);
+            carrinho.setLivros(l3);
+            carrinho.setVlPrecoUnitario(l3.getVlPrecoLivro());
+            venda.getCarrinho().add(carrinho);
+
+            //baixa no estoque
+            l3.setQtdEstoqueLivro(l3.getQtdEstoqueLivro() - carrinho.getQtdVenda());
+            System.out.println(carrinho.toString());
+            System.out.println(l3.toString());
+            System.out.println(venda.toString());
+        } else {
+            JOptionPane.showMessageDialog(null, "");
         }
-        
-    }
-        
-        
-        
-        
-        
+
     }
 
+}

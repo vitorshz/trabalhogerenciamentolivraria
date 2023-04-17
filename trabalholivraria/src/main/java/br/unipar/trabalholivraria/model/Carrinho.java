@@ -5,27 +5,25 @@ import java.util.ArrayList;
 public class Carrinho {
 
     private int cod_carrinho;
-    private ArrayList<Livros> Livros = new ArrayList<>();
+    private Livros livros;
     private int qtdVenda;
     private double vlPrecoUnitario;
     private double vlTotal;
     private double vlDescontdo;
 
-    
-
     public Carrinho() {
-        this.Livros = new ArrayList<>();
+
     }
 
-    public Carrinho(int cod_carrinho, int qtdVenda, double vlPrecoUnitario, double vlTotal,double vlDescontdo, ArrayList<Livros> Livros) {
+    public Carrinho(int cod_carrinho, Livros livros, int qtdVenda, double vlPrecoUnitario, double vlTotal, double vlDescontdo) {
         this.cod_carrinho = cod_carrinho;
+        this.livros = livros;
         this.qtdVenda = qtdVenda;
         this.vlPrecoUnitario = vlPrecoUnitario;
         this.vlTotal = vlTotal;
         this.vlDescontdo = vlDescontdo;
-        this.Livros = new ArrayList<>();
     }
-    
+
     public int getCod_carrinho() {
         return cod_carrinho;
     }
@@ -33,13 +31,13 @@ public class Carrinho {
     public void setCod_carrinho(int cod_carrinho) {
         this.cod_carrinho = cod_carrinho;
     }
-    
-    public ArrayList<Livros> getLivros() {
-        return Livros;
+
+    public Livros getLivros() {
+        return livros;
     }
 
-    public void setLivros(ArrayList<Livros> Livros) {
-        this.Livros = Livros;
+    public void setLivros(Livros livros) {
+        this.livros = livros;
     }
 
     public int getQtdVenda() {
@@ -48,7 +46,8 @@ public class Carrinho {
 
     public void setQtdVenda(int qtdVenda) {
         this.qtdVenda = qtdVenda;
-        this.vlTotal = (this.vlPrecoUnitario-vlDescontdo) *  this.qtdVenda;
+        this.vlTotal = (this.vlPrecoUnitario - vlDescontdo) * this.qtdVenda;
+
     }
 
     public double getVlPrecoUnitario() {
@@ -57,7 +56,7 @@ public class Carrinho {
 
     public void setVlPrecoUnitario(double vlPrecoUnitario) {
         this.vlPrecoUnitario = vlPrecoUnitario;
-        this.vlTotal = (this.vlPrecoUnitario-vlDescontdo) *  this.qtdVenda;
+        this.vlTotal = (this.vlPrecoUnitario - vlDescontdo) * this.qtdVenda;
     }
 
     public double getVlTotal() {
@@ -66,14 +65,24 @@ public class Carrinho {
 
     public void setVlTotal(double vlTotal) {
         this.vlTotal = vlTotal;
-        
+
     }
+
     public double getVlDescontdo() {
         return vlDescontdo;
     }
 
     public void setVlDescontdo(double vlDescontdo) {
         this.vlDescontdo = vlDescontdo;
+    }
+
+    @Override
+    public String toString() {
+        return getLivros().getTituloLivro()
+                + "\n qtdComprada= " + qtdVenda
+                + "\n vlPrecoUnitario= " + vlPrecoUnitario
+                + "\n vlDesconto " + vlDescontdo
+                + "\n vlTotal= " + vlTotal;
     }
 
 }

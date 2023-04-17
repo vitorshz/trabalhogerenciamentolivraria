@@ -1,19 +1,21 @@
 package br.unipar.trabalholivraria.model;
+
 import java.util.ArrayList;
+
 public class Vendas {
-    
+
     private int cod_Venda;
-    private ArrayList<Clientes> clientes;
+    private Clientes clientes;
     private ArrayList<Carrinho> Carrinho;
     private ArrayList<Fr_Pagamento> Fr_Pagamento;
 
     public Vendas() {
-        this.clientes = new ArrayList<>();
+
         this.Carrinho = new ArrayList<>();
         this.Fr_Pagamento = new ArrayList<>();
     }
 
-    public Vendas(int cod_Venda, ArrayList<Clientes> clientes, ArrayList<Carrinho> Carrinho, ArrayList<Fr_Pagamento> Fr_Pagamento) {
+    public Vendas(int cod_Venda, Clientes clientes, ArrayList<Carrinho> Carrinho, ArrayList<Fr_Pagamento> Fr_Pagamento) {
         this.cod_Venda = cod_Venda;
         this.clientes = clientes;
         this.Carrinho = Carrinho;
@@ -28,11 +30,11 @@ public class Vendas {
         this.cod_Venda = cod_Venda;
     }
 
-    public ArrayList<Clientes> getClientes() {
+    public Clientes getClientes() {
         return clientes;
     }
 
-    public void setClientes(ArrayList<Clientes> clientes) {
+    public void setClientes(Clientes clientes) {
         this.clientes = clientes;
     }
 
@@ -54,10 +56,9 @@ public class Vendas {
 
     @Override
     public String toString() {
-        return "Vendas{" + "cod_Venda=" + cod_Venda + ", clientes=" + clientes + ", Carrinho=" + Carrinho + ", Fr_Pagamento=" + Fr_Pagamento + '}';
+        return "Vendas{" + ", clientes " + clientes + 
+                ", Carrinho " + Carrinho + 
+                ", Fr_Pagamento " + Fr_Pagamento + '}';
     }
-    
-    
-    
-    
+
 }
