@@ -55,5 +55,4 @@ public class Clientes {
     public String toString() {
         return "Clientes{" + "clienteCpf=" + clienteCpf + ", clienteNome=" + clienteNome + ", enderecos=" + enderecos + '}';
     }
-
 }
