@@ -55,5 +55,6 @@ public class Estado {
     public String toString() {
         return "Estado{" + "codEstado=" + codEstado + ", nomeEstado=" + nomeEstado + ", siglaUF=" + siglaUF + ", paises=" + paises + '}';
     }
+    
 }
 
