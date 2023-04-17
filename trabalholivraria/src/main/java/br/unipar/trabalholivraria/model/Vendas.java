@@ -60,5 +60,4 @@ public class Vendas {
                 "\n Carrinho " + Carrinho + 
                   Fr_Pagamento;
     }
-
 }
