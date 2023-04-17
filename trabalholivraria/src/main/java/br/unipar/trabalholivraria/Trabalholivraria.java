@@ -99,7 +99,7 @@ public class Trabalholivraria {
             input = JOptionPane.showInputDialog("Qual o CPF do cliente ?");
             c1.setClienteCpf(input);
 
-            //criando o endereco
+            //Informando endereco do cliente1
             Endereco endereco1 = new Endereco();
             endereco1.setCod_Endereco(1);
             input = JOptionPane.showInputDialog("Qual  o nome da rua ?");
@@ -111,14 +111,14 @@ public class Trabalholivraria {
             endereco1.setDsComplemento(input);
             c1.getEnderecos().add(endereco1);
 
-            //Criando a cidade
+            //Informando cidade do cliente1
             Cidade cidade1 = new Cidade();
             cidade1.setCodCidade(1);
             input = JOptionPane.showInputDialog("Qual o nome da cidade?");
             cidade1.setNomeCidade(input);
             endereco1.getCidades().add(cidade1);
 
-            //criando o pais
+            //Informando pais do cliente1
             Pais p1 = new Pais();
             p1.setCodPais(1);
             input = JOptionPane.showInputDialog("Qual o Pais?");
@@ -126,7 +126,7 @@ public class Trabalholivraria {
             input = JOptionPane.showInputDialog("Qual a silga do Pais?");
             p1.setSiglaPais(input);
 
-            //criando estado 
+            //Informando estado do cliente1
             Estado estado1 = new Estado();
             estado1.setCodEstado(1);
             input = JOptionPane.showInputDialog("Qual o nome do Estado?");
