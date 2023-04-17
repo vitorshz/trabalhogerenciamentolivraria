@@ -88,6 +88,33 @@ public class Trabalholivraria {
                 + "1 - Criar \n"
                 + "2 - Atualizar");
         n1 = Integer.parseInt(input);
+        
+        // Cliando um cliente na mão 
+        Clientes c2 = new Clientes();
+        c2.setCod_cliente(2);
+        c2.setClienteCpf("55525255-55");
+        c2.setClienteNome("Vinicius");
+        //cliando o pais
+        Pais p2 = new Pais(02, "BASIL", "BR");
+        //cliando o estado
+        Estado estado2 = new Estado();
+        estado2.setCodEstado(2);
+        estado2.setNomeEstado("PARANA");
+        estado2.setSiglaUF("PR");
+        estado2.getPaises().add(p2);
+        
+        //Clianddo a cidade2
+        Cidade cidade2 = new Cidade();
+        cidade2.setCodCidade(2);
+        cidade2.setNomeCidade("CASCAVEL");
+        cidade2.getEstados().add(estado2);
+        
+        Endereco ed2 = new Endereco();
+        ed2.setCod_Endereco(2);
+        ed2.setDsComplemento("Nao");
+        ed2.setNmRua("uma rua");
+        ed2.setNrCasa(25);
+        c2.getEnderecos().add(ed2);
 
         if (n1 == 1) {
             //criando um cliente
@@ -139,11 +166,63 @@ public class Trabalholivraria {
 
             //Atualizando cadastro do cliente
         } else if (n1 == 2) {
+            
+            
             JOptionPane.showMessageDialog(null, "Atualizar cadastro do cliente");
+             input = JOptionPane.showInputDialog("Qual o codigo do cliente ?");
+             int n2 = Integer.parseInt(input);
+             if (n2 == 2){
+                 input = JOptionPane.showInputDialog("Qual dado deseja alterar \n"
+                         + "1 - Nome \n"
+                         + "2 - Cpf \n"
+                         + "3 - Endereco" );
+                   switch (input) {
+            case "1":
+                String nome2 = JOptionPane.showInputDialog("Digite o novo nome");
+                JOptionPane.showMessageDialog(null,"O nome do Cliente foi alterado com sucesso");
+                c2.setClienteNome(nome2);
+                System.out.println(c2.toString());
+                System.exit(1);
+                
+                
+                break;
+            case "2":
+                String Cpf2 = JOptionPane.showInputDialog("Digite o novo Cpf ");
+                JOptionPane.showMessageDialog(null,"O Cpf do Cliente foi alterado com sucesso");
+                c2.setClienteCpf(Cpf2);
+                System.out.println(c2.toString());
+                 
+                
+                break;
+            case "3":
+               String Endereco2 = JOptionPane.showInputDialog("Digite o novo Endereco");
+                JOptionPane.showMessageDialog(null,"O Endereco do Cliente foi alterado com sucesso");
+                System.out.println(c2.toString());
+                 System.exit(1);
+                
+                break;
+                
+            default:
+                JOptionPane.showMessageDialog(null, "Opção inválida");
+        
+                   
+                   }
+             }
+                 
+                 else{
+                    JOptionPane.showMessageDialog(null, "Cliente Não encotrado");
+                        System.exit(1);   
+             }
+             
+            
 
+        
         } else {
             JOptionPane.showMessageDialog(null, "Comandao invalido");
         }
+        
+        
+        
 
         //Itens da livraria
         int n = 0;
@@ -157,7 +236,10 @@ public class Trabalholivraria {
         if (n == 1) {
             //Inicio dos Dados da venda
             Vendas venda = new Vendas();
+            venda.setClientes(c2);
+            
             venda.setCod_Venda(l1.getCod_livro());
+            
             //baixa no carrinho
             Carrinho carrinho = new Carrinho();
             carrinho.setCod_carrinho(1);
