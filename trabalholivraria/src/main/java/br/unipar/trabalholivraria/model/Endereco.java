@@ -3,6 +3,7 @@ package br.unipar.trabalholivraria.model;
 import java.util.ArrayList;
 
 public class Endereco {
+
     private int cod_Endereco;
     private String nmRua;
     private String dsComplemento;
@@ -25,9 +26,8 @@ public class Endereco {
     public String toString() {
         return "Endereco{" + "cod_Endereco=" + cod_Endereco + ", nmRua=" + nmRua + ", dsComplemento=" + dsComplemento + ", nrCasa=" + nrCasa + ", cidades=" + cidades + '}';
     }
-    
 
-    public Endereco(String nmRua, String dsComplemento, int nrCasa, ArrayList<Cidade> cidades,int cod_Endereco) {
+    public Endereco(String nmRua, String dsComplemento, int nrCasa, ArrayList<Cidade> cidades, int cod_Endereco) {
         this.nmRua = nmRua;
         this.dsComplemento = dsComplemento;
         this.nrCasa = nrCasa;
@@ -66,8 +66,5 @@ public class Endereco {
     public void setCidades(ArrayList<Cidade> cidades) {
         this.cidades = cidades;
     }
-
-   
-    
 
 }
