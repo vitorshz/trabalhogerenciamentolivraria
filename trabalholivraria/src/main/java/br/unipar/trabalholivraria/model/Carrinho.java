@@ -84,5 +84,4 @@ public class Carrinho {
                 + "\n vlDesconto " + vlDescontdo
                 + "\n vlTotal= " + vlTotal;
     }
-
 }
