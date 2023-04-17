@@ -45,5 +45,4 @@ public class Cidade {
     public String toString() {
         return "Cidade{" + "codCidade=" + codCidade + ", nomeCidade=" + nomeCidade + ", estados=" + estados + '}';
     }
-
 }
