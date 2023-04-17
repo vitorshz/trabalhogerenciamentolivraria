@@ -42,7 +42,9 @@ public class Livraria {
 
     @Override
     public String toString() {
-        return "Livraria{" + "cod_Livraria=" + cod_Livraria + ", cnpj_Livraria=" + cnpj_Livraria + ", carrinho=" + carrinho + '}';
+        return "Livraria{" + "cod_Livraria=" + cod_Livraria + 
+                ", cnpj_Livraria=" + cnpj_Livraria + 
+                ", carrinho=" + carrinho + '}';
     }
 
    

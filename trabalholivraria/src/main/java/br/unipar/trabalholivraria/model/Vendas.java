@@ -56,9 +56,9 @@ public class Vendas {
 
     @Override
     public String toString() {
-        return "Vendas{" + ", clientes " + clientes + 
-                ", Carrinho " + Carrinho + 
-                ", Fr_Pagamento " + Fr_Pagamento + '}';
+        return "Vendas para o" + " cliente " + clientes + 
+                "\n Carrinho " + Carrinho + 
+                  Fr_Pagamento;
     }
 
 }

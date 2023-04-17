@@ -25,7 +25,7 @@ public class Fr_Pagamento {
 
     @Override
     public String toString() {
-        return "Fr_Pagamento{" + "cd_Formapagamento=" + cd_Formapagamento + ", ds_FormaPagamento=" + ds_FormaPagamento + '}';
+        return "Fr_Pagamento " + ds_FormaPagamento + '}';
     }
     
     
