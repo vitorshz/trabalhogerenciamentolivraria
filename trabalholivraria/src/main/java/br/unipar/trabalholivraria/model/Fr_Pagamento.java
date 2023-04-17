@@ -27,6 +27,4 @@ public class Fr_Pagamento {
     public String toString() {
         return "Fr_Pagamento " + ds_FormaPagamento + '}';
     }
-    
-    
 }
