@@ -162,7 +162,7 @@ public class Trabalholivraria {
             Carrinho carrinho = new Carrinho();
             carrinho.setCod_carrinho(1);
             carrinho.setQtdVenda(1);
-            carrinho.setVlDescontdo(10);
+            carrinho.setVlDescontdo(10);//valor do desconto
             carrinho.setLivros(l1);
             carrinho.setVlPrecoUnitario(l1.getVlPrecoLivro());
             venda.getCarrinho().add(carrinho);
