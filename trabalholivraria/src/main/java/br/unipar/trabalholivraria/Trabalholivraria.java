@@ -14,10 +14,12 @@ import br.unipar.trabalholivraria.model.Livros;
 import br.unipar.trabalholivraria.model.Pais;
 import br.unipar.trabalholivraria.model.Vendas;
 import br.unipar.trabalholivraria.model.Vendedor;
-
+import javax.swing.JOptionPane;
 public class Trabalholivraria {
 
     public static void main(String[] args) {
+        String input;
+        int n1;
         Livraria livrariapoucaporva = new Livraria(1, "62.410.352/0001-72");
         Livros l1 = new Livros();
 
@@ -71,6 +73,96 @@ public class Trabalholivraria {
         Fr_Pagamento pix = new Fr_Pagamento(1, "PIX");
         Fr_Pagamento cartao_debito = new Fr_Pagamento(2, "CARTAO_DEBITO");
         
+        JOptionPane.showMessageDialog(null,"Bem vindo a livraria Poucaporva");
+        
+        
+        
+        input = JOptionPane.showInputDialog("Deseja Criar um cadastro ou atulizar um cliente? \n"
+                + "1 - Criar \n"
+                + "2 - Atualizar");
+        n1 = Integer.parseInt(input);
+        
+        if(n1 == 1){
+            //criando um cliente
+            Clientes c1 = new Clientes();
+            input = JOptionPane.showInputDialog("Qual o nome do cliente ?");
+            c1.setClienteNome(input);  
+            input = JOptionPane.showInputDialog("Qual o CPF do cliente ?");
+            c1.setClienteCpf(input);   
+            
+            //criando o endereco
+            Endereco endereco1 = new Endereco();
+            endereco1.setCod_Endereco(1);
+            input = JOptionPane.showInputDialog("Qual  o nome da rua ?");
+            endereco1.setNmRua(input);
+            input = JOptionPane.showInputDialog("Qual o numero o numero da casa ?");
+            int nrCasa = Integer.parseInt(input);
+            endereco1.setNrCasa(nrCasa);
+            input = JOptionPane.showInputDialog("Algum complemento?");
+            endereco1.setDsComplemento(input);
+             c1.getEnderecos().add(endereco1);
+            
+            
+            //Criando a cidade
+            Cidade cidade1 = new Cidade();
+            cidade1.setCodCidade(1);
+            input = JOptionPane.showInputDialog("Qual o nome da cidade?");
+            cidade1.setNomeCidade(input);
+            endereco1.getCidades().add(cidade1);
+            
+           
+            
+            //criando o pais
+           Pais p1 = new Pais();
+            p1.setCodPais(1);
+            input = JOptionPane.showInputDialog("Qual o Pais?");
+            p1.setNomePais(input);
+            input = JOptionPane.showInputDialog("Qual a silga do Pais?");
+            p1.setSiglaPais(input);
+            
+            //criando estado 
+            Estado estado1 = new Estado();
+            estado1.setCodEstado(1);
+            input = JOptionPane.showInputDialog("Qual o nome do Estado?");
+            estado1.setNomeEstado(input);
+            input = JOptionPane.showInputDialog("Qual a silga do estado?");
+            estado1.setSiglaUF(input);
+            estado1.getPaises().add(p1);   
+            
+            System.out.println(c1.toString());
+         }
+        else if (n1 == 2){
+            JOptionPane.showMessageDialog(null, "Atualizar cadastro do cliente");
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Comandao invalido");
+        }        
+        
+        int n=0;
+        input = JOptionPane.showInputDialog("Deseja qual livro? "+"\n"+
+                "1 - Diario de um Banana Volume 1 " +"\n"+
+                "2 - Harry Potter e a Pedra Filosofal"+"\n"+
+                "3 - Piratas dos caribe volume 1");
+        n = Integer.parseInt(input);
+
+        if(n==1){
+        input = JOptionPane.showInputDialog("Qual seu codigo de Cliente"); 
+        int cod_clientes = Integer.parseInt(input);
+        Vendas venda = new Vendas();
+        venda.getClientes().add(c1);
+        } else if(n==2){
+
+        } else if(n==3){
+
+        }else{
+            JOptionPane.showMessageDialog(null,"");
+        }
         
     }
-}
+        
+        
+        
+        
+        
+    }
+
