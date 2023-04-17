@@ -140,7 +140,7 @@ public class Trabalholivraria {
             //Atualizando cadastro do cliente
         } else if (n1 == 2) {
             JOptionPane.showMessageDialog(null, "Atualizar cadastro do cliente");
-           
+
         } else {
             JOptionPane.showMessageDialog(null, "Comandao invalido");
         }
@@ -152,7 +152,7 @@ public class Trabalholivraria {
                 + "2 - Harry Potter e a Pedra Filosofal" + "\n"
                 + "3 - Piratas dos caribe volume 1");
         n = Integer.parseInt(input);
-        
+
         //caso escolha o livro 1
         if (n == 1) {
             //Inicio dos Dados da venda
@@ -166,29 +166,30 @@ public class Trabalholivraria {
             carrinho.setLivros(l1);
             carrinho.setVlPrecoUnitario(l1.getVlPrecoLivro());
             venda.getCarrinho().add(carrinho);
-            
+
             //Pergunta ao cliente sbre a forma de pagamento
             n = 0;
             input = JOptionPane.showInputDialog("Qual a forma de pagamento\n"
                     + "1 - para PIX "
                     + "\n 2 - PARA DÉBITO");
             n = Integer.parseInt(input);
+            //caso escolha PIX
             if (n == 1) {
                 venda.getFr_Pagamento().add(pix);
-                
+
                 //baixa no estoque
                 l1.setQtdEstoqueLivro(l1.getQtdEstoqueLivro() - carrinho.getQtdVenda());
-                
+
                 System.out.println(carrinho.toString());
                 System.out.println(l1.toString());
                 System.out.println(venda.toString());
-
+                //caso escolha debito
             } else if (n == 2) {
                 venda.getFr_Pagamento().add(cartao_debito);
-                
+
                 //baixa no estoque
                 l1.setQtdEstoqueLivro(l1.getQtdEstoqueLivro() - carrinho.getQtdVenda());
-                
+
                 System.out.println(carrinho.toString());
                 System.out.println(l1.toString());
                 System.out.println(venda.toString());
@@ -196,7 +197,7 @@ public class Trabalholivraria {
                 JOptionPane.showMessageDialog(null, "método invalido! ");
             }
 
-         //caso escolha o livro 2
+            //caso escolha o livro 2
         } else if (n == 2) {
             Vendas venda = new Vendas();
             venda.setCod_Venda(l2.getCod_livro());
@@ -215,29 +216,31 @@ public class Trabalholivraria {
                     + "1 - para PIX "
                     + "\n 2 - PARA DÉBITO");
             n = Integer.parseInt(input);
+            //caso escolha pix
             if (n == 1) {
                 venda.getFr_Pagamento().add(pix);
-                
+
                 //baixa no estoque
                 l2.setQtdEstoqueLivro(l2.getQtdEstoqueLivro() - carrinho.getQtdVenda());
-                
+
                 System.out.println(carrinho.toString());
                 System.out.println(l2.toString());
                 System.out.println(venda.toString());
-
+                //caso escolha debito
             } else if (n == 2) {
                 venda.getFr_Pagamento().add(pix);
-                
+
                 //baixa no estoque
                 l2.setQtdEstoqueLivro(l2.getQtdEstoqueLivro() - carrinho.getQtdVenda());
-                
+
                 System.out.println(carrinho.toString());
                 System.out.println(l2.toString());
                 System.out.println(venda.toString());
             } else {
                 JOptionPane.showMessageDialog(null, "método invalido! ");
             }
-        //caso escolha o livro 3
+
+            //caso escolha o livro 3
         } else if (n == 3) {
             Vendas venda = new Vendas();
             venda.setCod_Venda(l3.getCod_livro());
@@ -256,22 +259,23 @@ public class Trabalholivraria {
                     + "1 - para PIX "
                     + "\n 2 - PARA DÉBITO");
             n = Integer.parseInt(input);
+            //caso seja pix
             if (n == 1) {
                 venda.getFr_Pagamento().add(pix);
-                
+
                 //baixa no estoque
                 l3.setQtdEstoqueLivro(l3.getQtdEstoqueLivro() - carrinho.getQtdVenda());
-                
+
                 System.out.println(carrinho.toString());
                 System.out.println(l3.toString());
                 System.out.println(venda.toString());
-
+                //caso seja no debito
             } else if (n == 2) {
                 venda.getFr_Pagamento().add(pix);
-                
+
                 //baixa no estoque
                 l3.setQtdEstoqueLivro(l3.getQtdEstoqueLivro() - carrinho.getQtdVenda());
-                
+
                 System.out.println(carrinho.toString());
                 System.out.println(l3.toString());
                 System.out.println(venda.toString());
